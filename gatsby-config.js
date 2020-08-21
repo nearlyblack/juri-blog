@@ -1,9 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: "JOGW",
+    firstName: "Juri",
+    lastName: "Ogawa",
+    selfDescription: "Freelance writer | Proofreader | Translator",
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    social: {
+      linkedIn: "https://www.linkedin.com/in/juri-ogawa-2a7a6b1a9/",
+      facebook: "https://www.facebook.com/juri.ogawa.tabiholic",
+      email: "juri.ogawa1@gmail.com",
+    },
   },
+
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -13,8 +22,16 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/markdown`,
+        name: `markdown`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -27,6 +44,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-theme-material-ui`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

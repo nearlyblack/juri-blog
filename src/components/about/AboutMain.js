@@ -1,19 +1,44 @@
 import React from "react"
-import { makeStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 import CustomContainer from "../shared/CustomContainer"
-import AboutPicturesColumn from "./AboutPicturesColumn"
-import AboutTextColumn from "./AboutTextColumn"
+import PicturesColumn from "../shared/PicturesColumn"
+import TextColumn from "../shared/TextColumn"
+import { useStaticQuery, graphql } from "gatsby"
 
 function AboutMain() {
+  const data = useStaticQuery(graphql`
+    query AboutData {
+      allImageSharp(filter: { fluid: { originalName: { regex: "/about/" } } }) {
+        edges {
+          node {
+            fluid(quality: 90, maxWidth: 600) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/about/" } }) {
+        edges {
+          node {
+            frontmatter {
+              title
+            }
+            rawMarkdownBody
+          }
+        }
+      }
+    }
+  `)
+  const text = data.allMarkdownRemark.edges
+  const images = data.allImageSharp.edges
   return (
     <CustomContainer>
       <Grid container spacing={3}>
         <Grid item xs={12} md={9}>
-          <AboutTextColumn />
+          <TextColumn sections={text} />
         </Grid>
         <Grid item xs={12} md={3}>
-          <AboutPicturesColumn />
+          <PicturesColumn images={images} />
         </Grid>
       </Grid>
     </CustomContainer>

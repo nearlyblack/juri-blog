@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     color: "#fff",
     fontWeight: 700,
   },
-  selfDescription: { color: "#fff" },
+  selfDescription: { color: "#fff", textAlign: "center" },
 })
 function HeaderMast() {
   const classes = useStyles()
@@ -31,7 +31,6 @@ function HeaderMast() {
       }
     }
   `)
-  console.log(data)
   const { firstName, lastName, selfDescription } = data.site.siteMetadata
   return (
     <div className={classes.main}>

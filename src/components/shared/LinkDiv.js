@@ -25,17 +25,18 @@ function LinkDiv({ small }) {
       <Link
         variant="button"
         className={small ? classes.navLinkSm : classes.navLink}
-        to="/about"
-      >
-        About
-      </Link>
-      <Link
-        variant="button"
-        className={small ? classes.navLinkSm : classes.navLink}
         to="/articles"
       >
         Articles
       </Link>
+      <Link
+        variant="button"
+        className={small ? classes.navLinkSm : classes.navLink}
+        to="/about"
+      >
+        About
+      </Link>
+
       <Link
         variant="button"
         className={small ? classes.navLinkSm : classes.navLink}

@@ -4,7 +4,6 @@ import { makeStyles } from "@material-ui/core/styles"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import FacebookIcon from "@material-ui/icons/Facebook"
 import EmailIcon from "@material-ui/icons/Email"
-import { Typography } from "@material-ui/core"
 import { Link } from "gatsby-theme-material-ui"
 
 const useStyles = makeStyles(theme => ({

@@ -9,6 +9,8 @@ import IconButton from "@material-ui/core/IconButton"
 import ShareIcon from "@material-ui/icons/Share"
 import Typography from "@material-ui/core/Typography"
 import pink from "@material-ui/core/colors/pink"
+import { Link } from "gatsby-theme-material-ui"
+
 const useStyles = makeStyles(theme => ({
   root: {
     height: "100%",
@@ -29,29 +31,31 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function ArticleCard({ article, img }) {
+function ArticleCard({ article, img, linkTo }) {
   const classes = useStyles()
 
   return (
-    <Card className={classes.root}>
-      <Img className={classes.media} fluid={img} />
+    <Link to={linkTo} underline="none">
+      <Card className={classes.root}>
+        <Img className={classes.media} fluid={img} />
 
-      <CardContent className={classes.content}>
-        <Typography variant="subtitle2">{article.tags.join(", ")}</Typography>
-        <Typography variant="h6" component="h6">
-          {article.title}
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {article.overview}
-        </Typography>
-      </CardContent>
-      <CardActions className={classes.actionsDiv}>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <Typography variant="body2">{article.length}</Typography>
-      </CardActions>
-    </Card>
+        <CardContent className={classes.content}>
+          <Typography variant="subtitle2">{article.tags.join(", ")}</Typography>
+          <Typography variant="h6" component="h6">
+            {article.title}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {article.overview}
+          </Typography>
+        </CardContent>
+        <CardActions className={classes.actionsDiv}>
+          <IconButton aria-label="share">
+            <ShareIcon />
+          </IconButton>
+          <Typography variant="body2">{article.length}</Typography>
+        </CardActions>
+      </Card>
+    </Link>
   )
 }
 

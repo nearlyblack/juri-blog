@@ -8,6 +8,7 @@ const useStyles = makeStyles(theme => ({
   footer: {
     height: "5rem",
     background: grey[900],
+    width: "100%",
   },
   contents: {
     height: "100%",

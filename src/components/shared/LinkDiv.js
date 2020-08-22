@@ -2,7 +2,6 @@ import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { Link } from "gatsby-theme-material-ui"
 import PropTypes from "prop-types"
-
 const useStyles = makeStyles(theme => ({
   navLink: {
     color: "#fff",

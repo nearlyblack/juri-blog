@@ -18,15 +18,16 @@ const useStyles = makeStyles(theme => ({
 export default function Article({ data }) {
   const classes = useStyles()
   const article = data.markdownRemark
-  const { frontmatter, rawMarkdownBody } = article
+  const { frontmatter, html } = article
+
   return (
     <Layout>
       <CustomContainer className={classes.customCont}>
         <div>
-          <Typography className={classes.title} variant="h2">
+          {/*<Typography className={classes.title} variant="h2">
             {frontmatter.title}
-          </Typography>
-          <MuiMarkdown>{rawMarkdownBody}</MuiMarkdown>
+  </Typography>*/}
+          <MuiMarkdown>{html}</MuiMarkdown>
         </div>
       </CustomContainer>
     </Layout>
@@ -36,6 +37,7 @@ export const articleQuery = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       rawMarkdownBody
+      html
       frontmatter {
         title
       }

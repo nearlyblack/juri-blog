@@ -16,20 +16,7 @@ module.exports = {
 
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/markdown`,
-        name: `markdown`,
-      },
-    },
+
     {
       resolve: `gatsby-plugin-react-intl`,
       options: {
@@ -49,7 +36,43 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-remark`,
+
+    `gatsby-remark-images`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          //Only works in 1st position - gets rid of the <p> wrapping tag
+          "gatsby-remark-unwrap-images",
+          {
+            resolve: `gatsby-remark-relative-images`,
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+              withWebp: true,
+              disableBgImage: true,
+              markdownCaptions: true,
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/markdown`,
+        name: `markdown`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

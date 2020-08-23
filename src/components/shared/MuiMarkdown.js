@@ -36,6 +36,7 @@ const options = {
         <Typography
           classes={{ root: classes.body1 }}
           variant="body1"
+          component="p"
           paragraph
           {...props}
         />

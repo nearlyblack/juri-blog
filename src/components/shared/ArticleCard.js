@@ -27,6 +27,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     justifyContent: "space-between",
   },
+  timeToRead: { padding: theme.spacing(0, 1) },
 }))
 
 function ArticleCard({ article, img, linkTo, linkLocation }) {
@@ -73,7 +74,9 @@ function ArticleCard({ article, img, linkTo, linkLocation }) {
           handleKeyDown={handleKeyDown}
           linkLocation={linkLocation}
         />
-        <Typography variant="body2">{article.length}</Typography>
+        <Typography className={classes.timeToRead} variant="body2">
+          {article.length}
+        </Typography>
       </CardActions>
     </Card>
   )

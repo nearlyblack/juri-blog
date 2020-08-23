@@ -16,6 +16,13 @@ function MainLanding(props) {
               tags
               author
               length
+              imgPlaceholder {
+                childImageSharp {
+                  fluid(maxWidth: 400) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
             fields {
               slug
@@ -57,7 +64,10 @@ function MainLanding(props) {
           >
             <ArticleCard
               article={article.node.frontmatter}
-              img={images[index].node.fluid}
+              img={
+                article.node.frontmatter.imgPlaceholder.childImageSharp.fluid ||
+                images[index].node.fluid
+              }
               linkTo={article.node.fields.slug}
               linkLocation={`${data.site.siteMetadata.siteAddress}${article.node.fields.slug}`}
             />

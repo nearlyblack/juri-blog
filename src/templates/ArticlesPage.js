@@ -17,7 +17,6 @@ const useStyles = makeStyles(theme => ({
 
 function ArticlesPage(props) {
   const classes = useStyles()
-  console.log(props)
   const { data, pageContext, location } = props
   const { currentPage, numPages } = pageContext
   const articles = data.allMarkdownRemark.edges

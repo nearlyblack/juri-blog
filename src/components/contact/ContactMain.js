@@ -43,7 +43,6 @@ function ContactMain() {
       }
     }
   `)
-  console.log(data)
   const text = data.allMarkdownRemark.edges
   const images = data.allImageSharp.edges
   return (

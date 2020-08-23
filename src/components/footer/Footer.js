@@ -4,6 +4,7 @@ import LinkDiv from "../shared/LinkDiv"
 import CustomContainer from "../shared/CustomContainer"
 import grey from "@material-ui/core/colors/grey"
 import { Typography } from "@material-ui/core"
+
 const useStyles = makeStyles(theme => ({
   footer: {
     height: "5rem",

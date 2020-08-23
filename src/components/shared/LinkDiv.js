@@ -2,6 +2,8 @@ import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { Link } from "gatsby-theme-material-ui"
 import PropTypes from "prop-types"
+import { useIntl } from "gatsby-plugin-react-intl"
+
 const useStyles = makeStyles(theme => ({
   navLink: {
     color: "#fff",
@@ -18,6 +20,7 @@ const useStyles = makeStyles(theme => ({
 }))
 function LinkDiv({ small }) {
   const classes = useStyles()
+  const intl = useIntl()
 
   return (
     <div className={classes.linkDiv}>
@@ -26,14 +29,14 @@ function LinkDiv({ small }) {
         className={small ? classes.navLinkSm : classes.navLink}
         to="/articles"
       >
-        Articles
+        {intl.formatMessage({ id: "articleBtn" })}
       </Link>
       <Link
         variant="button"
         className={small ? classes.navLinkSm : classes.navLink}
         to="/about"
       >
-        About
+        {intl.formatMessage({ id: "aboutBtn" })}
       </Link>
 
       <Link
@@ -41,7 +44,7 @@ function LinkDiv({ small }) {
         className={small ? classes.navLinkSm : classes.navLink}
         to="/contact"
       >
-        Contact
+        {intl.formatMessage({ id: "contactBtn" })}
       </Link>
     </div>
   )

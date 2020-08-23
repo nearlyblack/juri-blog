@@ -2,6 +2,7 @@ import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 //import Button from "@material-ui/core/Button"
 import LinkDiv from "../shared/LinkDiv"
+import IntlDiv from "./IntlDiv"
 const useStyles = makeStyles(theme => ({
   nav: {
     display: "flex",
@@ -17,6 +18,7 @@ function HeaderNav() {
   return (
     <div className={classes.nav}>
       <LinkDiv />
+      <IntlDiv />
       {/*<div className={classes.btnDiv}>
         <Button className={classes.headerBtn}>Action</Button>
   </div>*/}

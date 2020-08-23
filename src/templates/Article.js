@@ -3,7 +3,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import CustomContainer from "../components/shared/CustomContainer"
 import { makeStyles } from "@material-ui/core/styles"
-import Typography from "@material-ui/core/Typography"
+//import Typography from "@material-ui/core/Typography"
+import SEO from "../components/seo"
 import MuiMarkdown from "../components/shared/MuiMarkdown"
 const useStyles = makeStyles(theme => ({
   customCont: { minHeight: "82vh" },

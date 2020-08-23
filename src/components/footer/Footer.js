@@ -16,6 +16,9 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    [theme.breakpoints.down("450")]: {
+      flexDirection: "column-reverse",
+    },
   },
   copyright: {
     color: "#fff",

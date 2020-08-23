@@ -18,7 +18,7 @@ function MainLanding({ origin }) {
               length
               imgPlaceholder {
                 childImageSharp {
-                  fluid(maxWidth: 400) {
+                  fluid(maxWidth: 360) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -30,20 +30,8 @@ function MainLanding({ origin }) {
           }
         }
       }
-      allImageSharp(
-        filter: { fluid: { originalName: { regex: "/placeholder/" } } }
-      ) {
-        edges {
-          node {
-            fluid(maxWidth: 400, maxHeight: 250) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
     }
   `)
-  const images = data.allImageSharp.edges
   const articles = data.allMarkdownRemark.edges
   return (
     <CustomContainer>
@@ -59,8 +47,7 @@ function MainLanding({ origin }) {
             <ArticleCard
               article={article.node.frontmatter}
               img={
-                article.node.frontmatter.imgPlaceholder.childImageSharp.fluid ||
-                images[index].node.fluid
+                article.node.frontmatter.imgPlaceholder.childImageSharp.fluid
               }
               linkTo={article.node.fields.slug}
               linkLocation={`${origin}${article.node.fields.slug}`}

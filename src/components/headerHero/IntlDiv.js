@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
     color: "#fff",
     fontWeight: 700,
     padding: 0,
-    transform: "translateX(8px)",
+    minWidth: "40px",
   },
 }))
 
@@ -23,10 +23,10 @@ function IntlDiv() {
 
   return (
     <div>
-      <Button className={classes.navBtn} onClick={handleEnClick}>
+      <Button classes={{ root: classes.navBtn }} onClick={handleEnClick}>
         {intl.formatMessage({ id: "en" })}
       </Button>
-      <Button className={classes.navBtn} onClick={handleJaClick}>
+      <Button classes={{ root: classes.navBtn }} onClick={handleJaClick}>
         {intl.formatMessage({ id: "ja" })}
       </Button>
     </div>

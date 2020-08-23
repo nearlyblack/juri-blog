@@ -7,8 +7,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import SEO from "../components/seo"
 import MuiMarkdown from "../components/shared/MuiMarkdown"
 const useStyles = makeStyles(theme => ({
-  customCont: { minHeight: "82vh" },
-  title: { marginBottom: theme.spacing(3) },
+  customCont: { minHeight: "82vh", paddingTop: theme.spacing(3) },
   aboutSection: {
     marginBottom: theme.spacing(3),
   },

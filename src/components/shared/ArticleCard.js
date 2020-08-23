@@ -60,7 +60,7 @@ function ArticleCard({ article, img, linkTo, linkLocation }) {
         </CardContent>
       </Link>
       <CardActions className={classes.actionsDiv}>
-        <IconButton onClick={handleClick}>
+        <IconButton aria-label="social-media-button" onClick={handleClick}>
           <ShareIcon />
         </IconButton>
         <SocialShareMenu

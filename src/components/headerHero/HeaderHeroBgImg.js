@@ -11,11 +11,11 @@ const useStyles = makeStyles({
     maxHeight: "65vh",
     width: "100%",
   },
-  rootSm: { height: "9rem", width: "100%" },
+  rootSm: { height: "10rem", width: "100%" },
   overlay: {
     height: "100%",
     width: "100%",
-    background: "rgba(0,0,0,.4)",
+    background: "rgba(0,0,0,.6)",
     zIndex: 10,
   },
 })
@@ -29,7 +29,7 @@ const HeaderHeroBgImage = ({ children, full }) => {
       ) {
         edges {
           node {
-            fluid(quality: 50, maxWidth: 1920) {
+            fluid(quality: 30, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

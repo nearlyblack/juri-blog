@@ -16,8 +16,6 @@ module.exports = {
 
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-netlify`,
-
     {
       resolve: `gatsby-plugin-react-intl`,
       options: {
@@ -30,7 +28,7 @@ module.exports = {
         // option to redirect to `/ko` when connecting `/`
         redirect: true,
         // option for use / as defaultLangauge root path. if your defaultLanguage is `ko`, when `redirectDefaultLanguageToRoot` is true, then it will not generate `/ko/xxx` pages, instead of `/xxx`
-        redirectDefaultLanguageToRoot: true,
+        redirectDefaultLanguageToRoot: false,
         // paths that you don't want to genereate locale pages, example: ["/dashboard/","/test/**"], string format is from micromatch https://github.com/micromatch/micromatch
         ignoredPaths: [],
       },
@@ -42,7 +40,6 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          //Only works in 1st position - gets rid of the <p> wrapping tag
           "gatsby-remark-unwrap-images",
           {
             resolve: `gatsby-remark-relative-images`,
@@ -73,6 +70,7 @@ module.exports = {
         name: `markdown`,
       },
     },
+    `gatsby-theme-material-ui`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -81,18 +79,10 @@ module.exports = {
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#fff`,
-        display: `minimal-ui`,
+        display: `browser`,
         icon: `src/images/icons/android-chrome-512x512.png`,
       },
     },
-    {
-      resolve: "gatsby-plugin-offline",
-      options: {
-        workboxConfig: {
-          globPatterns: ["**/icon-path*"],
-        },
-      },
-    },
-    `gatsby-theme-material-ui`,
+    "gatsby-plugin-remove-serviceworker",
   ],
 }

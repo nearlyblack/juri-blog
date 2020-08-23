@@ -22,6 +22,7 @@ export default function Article({ data }) {
 
   return (
     <Layout>
+      <SEO title={frontmatter.title} description={frontmatter.overview} />
       <CustomContainer className={classes.customCont}>
         <div>
           {/*<Typography className={classes.title} variant="h2">
@@ -40,6 +41,7 @@ export const articleQuery = graphql`
       html
       frontmatter {
         title
+        overview
       }
     }
   }

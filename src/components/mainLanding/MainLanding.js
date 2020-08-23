@@ -31,7 +31,6 @@ function MainLanding(props) {
         }
       }
       site {
-        host
         siteMetadata {
           siteAddress
         }

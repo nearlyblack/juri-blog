@@ -5,8 +5,8 @@ module.exports = {
     firstName: "Juri",
     lastName: "Ogawa",
     selfDescription: "Freelance writer | Proofreader | Translator",
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `A personal portfolio for Juri Ogawa, freelance writer, proofreader and translator`,
+    author: `Juri Ogawa`,
     social: {
       linkedIn: "https://www.linkedin.com/in/juri-ogawa-2a7a6b1a9/",
       facebook: "https://www.facebook.com/juri.ogawa.tabiholic",

@@ -26,7 +26,7 @@ function ContactMain() {
         edges {
           node {
             fluid(quality: 90, maxWidth: 600) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

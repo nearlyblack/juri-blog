@@ -36,7 +36,7 @@ function MainLanding({ origin }) {
         edges {
           node {
             fluid(maxWidth: 400, maxHeight: 250) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

@@ -84,7 +84,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          fluid(maxWidth: 400, maxHeight: 250) {
+          fluid(quality: 60, maxWidth: 360, maxHeight: 250) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

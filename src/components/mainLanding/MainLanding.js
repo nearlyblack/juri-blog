@@ -18,8 +18,8 @@ function MainLanding({ origin }) {
               length
               imgPlaceholder {
                 childImageSharp {
-                  fluid(maxWidth: 360) {
-                    ...GatsbyImageSharpFluid
+                  fluid(quality: 60, maxWidth: 360) {
+                    ...GatsbyImageSharpFluid_withWebp
                   }
                 }
               }

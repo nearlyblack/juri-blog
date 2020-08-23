@@ -15,7 +15,7 @@ const useStyles = makeStyles({
   overlay: {
     height: "100%",
     width: "100%",
-    background: "rgba(0,0,0,.3)",
+    background: "rgba(0,0,0,.4)",
     zIndex: 10,
   },
 })

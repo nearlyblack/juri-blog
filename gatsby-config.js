@@ -16,6 +16,7 @@ module.exports = {
 
   plugins: [
     `gatsby-plugin-react-helmet`,
+    //`gatsby-plugin-netlify`,
 
     {
       resolve: `gatsby-plugin-react-intl`,
@@ -36,7 +37,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-
     `gatsby-remark-images`,
     {
       resolve: `gatsby-transformer-remark`,
@@ -76,18 +76,23 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Juri Ogawa's Portfolio`,
+        short_name: `JOGW`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#fff`,
+        theme_color: `#fff`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icons/android-chrome-512x512.png`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {
+        workboxConfig: {
+          globPatterns: ["**/icon-path*"],
+        },
       },
     },
     `gatsby-theme-material-ui`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }

@@ -26,7 +26,11 @@ function HeaderMast() {
       <Typography className={classes.name} variant="h2" component="h1">
         {intl.formatMessage({ id: "fullName" })}
       </Typography>
-      <Typography className={classes.selfDescription} variant="subtitle1">
+      <Typography
+        className={classes.selfDescription}
+        component="span"
+        variant="subtitle1"
+      >
         {intl.formatMessage({ id: "headerSubtitle" })}
       </Typography>
     </div>

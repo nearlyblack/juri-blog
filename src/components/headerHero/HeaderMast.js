@@ -43,13 +43,25 @@ function HeaderMast() {
         {title}
       </Link>
       <div>
-        <Link underline="none" to={social.linkedIn}>
+        <Link
+          aria-label="linkedin-icon-link"
+          underline="none"
+          to={social.linkedIn}
+        >
           <LinkedInIcon className={classes.socialIcon} />
         </Link>
-        <Link underline="none" to={social.facebook}>
+        <Link
+          aria-label="facebook-icon-link"
+          underline="none"
+          to={social.facebook}
+        >
           <FacebookIcon className={classes.socialIcon} />
         </Link>
-        <Link underline="none" to={`mailto:${social.email}`}>
+        <Link
+          aria-label="email-icon-link"
+          underline="none"
+          to={`mailto:${social.email}`}
+        >
           <EmailIcon
             onClick={handleEmailClick}
             className={classes.socialIcon}

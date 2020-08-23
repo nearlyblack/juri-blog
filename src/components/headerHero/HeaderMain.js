@@ -1,5 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import { useIntl } from "gatsby-plugin-react-intl"
@@ -22,18 +21,6 @@ const useStyles = makeStyles({
 function HeaderMast() {
   const classes = useStyles()
   const intl = useIntl()
-
-  const data = useStaticQuery(graphql`
-    query MainQuery {
-      site {
-        siteMetadata {
-          firstName
-          lastName
-          selfDescription
-        }
-      }
-    }
-  `)
   return (
     <div className={classes.main}>
       <Typography className={classes.name} variant="h2" component="h1">

@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    siteAddress: "http://localhost:8000",
     title: "JOGW",
     firstName: "Juri",
     lastName: "Ogawa",

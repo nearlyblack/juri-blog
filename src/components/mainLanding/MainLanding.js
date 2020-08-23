@@ -4,7 +4,7 @@ import ArticleCard from "../shared/ArticleCard"
 import { useStaticQuery, graphql } from "gatsby"
 import Grid from "@material-ui/core/Grid"
 
-function MainLanding() {
+function MainLanding(props) {
   const data = useStaticQuery(graphql`
     query PlaceholderImgQuery {
       allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/article/" } }) {
@@ -21,6 +21,12 @@ function MainLanding() {
               slug
             }
           }
+        }
+      }
+      site {
+        host
+        siteMetadata {
+          siteAddress
         }
       }
       allImageSharp(
@@ -53,6 +59,7 @@ function MainLanding() {
               article={article.node.frontmatter}
               img={images[index].node.fluid}
               linkTo={article.node.fields.slug}
+              linkLocation={`${data.site.siteMetadata.siteAddress}${article.node.fields.slug}`}
             />
           </Grid>
         ))}

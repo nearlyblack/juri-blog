@@ -17,8 +17,8 @@ const useStyles = makeStyles(theme => ({
 
 function ArticlesPage(props) {
   const classes = useStyles()
-
-  const { data, pageContext } = props
+  console.log(props)
+  const { data, pageContext, location } = props
   const { currentPage, numPages } = pageContext
   const articles = data.allMarkdownRemark.edges
   const images = data.allImageSharp.edges
@@ -41,6 +41,7 @@ function ArticlesPage(props) {
                 article={article.node.frontmatter}
                 img={images[index].node.fluid}
                 linkTo={article.node.fields.slug}
+                linkLocation={`${location.origin}${article.node.fields.slug}`}
               />
             </Grid>
           ))}

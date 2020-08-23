@@ -8,54 +8,74 @@ import CardActions from "@material-ui/core/CardActions"
 import IconButton from "@material-ui/core/IconButton"
 import ShareIcon from "@material-ui/icons/Share"
 import Typography from "@material-ui/core/Typography"
-import pink from "@material-ui/core/colors/pink"
 import { Link } from "gatsby-theme-material-ui"
+import SocialShareMenu from "./SocialShareMenu"
 
 const useStyles = makeStyles(theme => ({
   root: {
     height: "100%",
     display: "flex",
     flexDirection: "column",
+    justifyContent: "space-between",
   },
   media: {
     height: 0,
     paddingTop: "56.25%", // 16:9
   },
   content: { flex: 1 },
-  avatar: {
-    backgroundColor: pink[200],
-  },
   actionsDiv: {
     display: "flex",
     justifyContent: "space-between",
   },
 }))
 
-function ArticleCard({ article, img, linkTo }) {
+function ArticleCard({ article, img, linkTo, linkLocation }) {
   const classes = useStyles()
-
+  const [anchorEl, setAnchorEl] = React.useState(null)
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget)
+  }
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+  const handleKeyDown = e => {
+    e.keyCode === 13 && handleClose()
+  }
   return (
-    <Link to={linkTo} underline="none">
-      <Card className={classes.root}>
+    <Card className={classes.root}>
+      <Link to={linkTo} underline="none">
         <Img className={classes.media} fluid={img} />
 
         <CardContent className={classes.content}>
-          <Typography variant="subtitle2">{article.tags.join(", ")}</Typography>
-          <Typography variant="h6" component="h6">
+          <Typography color="textPrimary" variant="subtitle2">
+            {article.tags.join(", ")}
+          </Typography>
+          <Typography color="textPrimary" variant="h6" component="h6">
             {article.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {article.overview}
           </Typography>
         </CardContent>
-        <CardActions className={classes.actionsDiv}>
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
-          <Typography variant="body2">{article.length}</Typography>
-        </CardActions>
-      </Card>
-    </Link>
+      </Link>
+      <CardActions className={classes.actionsDiv}>
+        <IconButton
+          aria-label="share"
+          aria-controls="social-menu"
+          aria-haspopup="true"
+          onClick={handleClick}
+        >
+          <ShareIcon />
+        </IconButton>
+        <SocialShareMenu
+          anchorEl={anchorEl}
+          handleClose={handleClose}
+          handleKeyDown={handleKeyDown}
+          linkLocation={linkLocation}
+        />
+        <Typography variant="body2">{article.length}</Typography>
+      </CardActions>
+    </Card>
   )
 }
 

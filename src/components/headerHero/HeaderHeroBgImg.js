@@ -29,7 +29,7 @@ const HeaderHeroBgImage = ({ children, full }) => {
       ) {
         edges {
           node {
-            fluid(quality: 90, maxWidth: 1920) {
+            fluid(quality: 50, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

@@ -8,6 +8,8 @@ const useStyles = makeStyles(theme => ({
   navBtn: {
     color: "#fff",
     fontWeight: 700,
+    padding: 0,
+    transform: "translateX(8px)",
   },
 }))
 
@@ -17,15 +19,15 @@ function IntlDiv() {
 
   const handleEnClick = () => changeLocale("en")
 
-  const handleJpClick = () => changeLocale("jp")
+  const handleJaClick = () => changeLocale("ja")
 
   return (
     <div>
       <Button className={classes.navBtn} onClick={handleEnClick}>
         {intl.formatMessage({ id: "en" })}
       </Button>
-      <Button className={classes.navBtn} onClick={handleJpClick}>
-        {intl.formatMessage({ id: "jp" })}
+      <Button className={classes.navBtn} onClick={handleJaClick}>
+        {intl.formatMessage({ id: "ja" })}
       </Button>
     </div>
   )

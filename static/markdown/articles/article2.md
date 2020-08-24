@@ -3,7 +3,6 @@ tags: ["Big Dogs"]
 title: "Anim dolor dolor"
 overview: "Labore esse commodo cillum et. Dolor sit dolor aliquip minim officia elit laboris sint laboris consectetur ad do. Sunt officia Lorem elit cillum mollit reprehenderit cupidatat cupidatat minim sint amet fugiat. Quis nisi veniam laboris incididunt."
 author: "Juri"
-length: "3 min read"
 slug: "article2"
 date: "12/1/2020"
 imgPlaceholder: ../../images/placeholders/placeholder2.jpg

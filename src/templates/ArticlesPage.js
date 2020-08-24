@@ -2,12 +2,12 @@ import React from "react"
 import CustomContainer from "../components/shared/CustomContainer"
 import { graphql } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
-
 import Grid from "@material-ui/core/Grid"
 import Pagination from "@material-ui/lab/Pagination"
 import Layout from "../components/layout"
 import ArticleCard from "../components/shared/ArticleCard"
 import { navigate } from "gatsby"
+
 const useStyles = makeStyles(theme => ({
   customCont: { minHeight: "82vh" },
   articlesGrid: {
@@ -20,7 +20,6 @@ function ArticlesPage(props) {
   const { data, pageContext, location } = props
   const { currentPage, numPages } = pageContext
   const articles = data.allMarkdownRemark.edges
-  const images = data.allImageSharp.edges
   const handlePaginationChange = (e, page) => {
     navigate(`/articles/${page !== 1 ? page : ""}`)
   }
@@ -38,9 +37,12 @@ function ArticlesPage(props) {
             >
               <ArticleCard
                 article={article.node.frontmatter}
-                img={images[index].node.fluid}
+                img={
+                  article.node.frontmatter.imgPlaceholder.childImageSharp.fluid
+                }
                 linkTo={article.node.fields.slug}
                 linkLocation={`${location.origin}${article.node.fields.slug}`}
+                html={article.node.html}
               />
             </Grid>
           ))}
@@ -64,6 +66,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          html
           frontmatter {
             date
             title
@@ -72,20 +75,16 @@ export const pageQuery = graphql`
             author
             length
             title
+            imgPlaceholder {
+              childImageSharp {
+                fluid(quality: 60, maxWidth: 360) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
           fields {
             slug
-          }
-        }
-      }
-    }
-    allImageSharp(
-      filter: { fluid: { originalName: { regex: "/placeholder/" } } }
-    ) {
-      edges {
-        node {
-          fluid(quality: 60, maxWidth: 360, maxHeight: 250) {
-            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }

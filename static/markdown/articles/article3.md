@@ -3,7 +3,6 @@ tags: ["Tech", "Lifestyle"]
 title: "Fugiat minim Lorem "
 overview: "Eiusmod tempor irure voluptate laborum veniam in ex. Id esse cupidatat laborum tempor excepteur dolor amet fugiat deserunt exercitation."
 author: "Juri"
-length: "1 min read"
 slug: "article3"
 date: "12/2/2020"
 imgPlaceholder: ../../images/placeholders/placeholder3.jpg

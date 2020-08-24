@@ -1,19 +1,13 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { makeStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 import CustomContainer from "../shared/CustomContainer"
 import PicturesColumn from "../shared/PicturesColumn"
 import TextColumn from "../shared/TextColumn"
-import { useStaticQuery, graphql } from "gatsby"
-import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles(theme => ({
   customCont: { minHeight: "82vh" },
-  title: { marginBottom: theme.spacing(3) },
-  aboutSection: {
-    marginBottom: theme.spacing(3),
-  },
-  sectionTitle: { marginBottom: theme.spacing(1) },
-  sectionBody: { fontWeight: 300 },
 }))
 function ContactMain() {
   const classes = useStyles()
@@ -25,7 +19,7 @@ function ContactMain() {
       ) {
         edges {
           node {
-            fluid(quality: 90, maxWidth: 600) {
+            fluid(quality: 80, maxWidth: 1050) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -34,22 +28,19 @@ function ContactMain() {
       allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/contact/" } }) {
         edges {
           node {
-            frontmatter {
-              title
-            }
             rawMarkdownBody
           }
         }
       }
     }
   `)
-  const text = data.allMarkdownRemark.edges
+  const text = data.allMarkdownRemark.edges[0]
   const images = data.allImageSharp.edges
   return (
     <CustomContainer className={classes.customCont}>
       <Grid container spacing={3}>
         <Grid item xs={12} md={9}>
-          <TextColumn sections={text} />
+          <TextColumn text={text} />
         </Grid>
         <Grid item xs={12} md={3}>
           <PicturesColumn images={images} />

@@ -20,6 +20,5 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Overview", name: "overview", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
-      - { label: "Time to read", name: "length", widget: "string" }
       - { label: "Card Image", name: "imgPlaceholder", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }

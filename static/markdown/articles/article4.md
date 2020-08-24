@@ -3,7 +3,6 @@ tags: ["Tech", "Fashion"]
 title: "Non et non adipisicing "
 overview: "Reprehenderit adipisicing amet commodo exercitation mollit officia mollit in pariatur cillum in sunt. Ad anim culpa elit aute voluptate. Aliquip dolor voluptate laborum excepteur minim pariatur qui Lorem occaecat nulla adipisicing."
 author: "Juri"
-length: "4 min read"
 slug: "article4"
 date: "13/2/2020"
 imgPlaceholder: ../../images/placeholders/placeholder4.jpg

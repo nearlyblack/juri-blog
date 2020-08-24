@@ -3,7 +3,6 @@ tags: ["Tech"]
 title: "Sit laboris qui"
 overview: "Labore esse aliqua quis minim duis ut minim cillum aute nisi eu sunt nostrud amet. Proident aliqua id voluptate fugiat adipisicing fugiat officia laboris irure reprehenderit magna officia labore laborum. Nostrud qui fugiat do laboris dolor ad incididunt. "
 author: "Juri"
-length: "2 min read"
 slug: "article8"
 date: "14/8/2020"
 imgPlaceholder: ../../images/placeholders/placeholder8.jpg

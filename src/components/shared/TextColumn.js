@@ -1,33 +1,25 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import Typography from "@material-ui/core/Typography"
 import MuiMarkdown from "./MuiMarkdown"
+import PropTypes from "prop-types"
+
 const useStyles = makeStyles(theme => ({
   title: { marginBottom: theme.spacing(3) },
-  aboutSection: {
+  sectionBody: {
     marginBottom: theme.spacing(3),
   },
-  sectionTitle: { marginBottom: theme.spacing(1) },
 }))
-function AboutTextColumn({ sections }) {
+function TextColumn({ text }) {
   const classes = useStyles()
   return (
-    <div>
-      {sections.map((section, i) => (
-        <div
-          key={`section-${section.node.frontmatter.title}`}
-          className={classes.aboutSection}
-        >
-          <Typography className={classes.sectionTitle} variant="h4">
-            {section.node.frontmatter.title}
-          </Typography>
-          <MuiMarkdown className={classes.sectionBody}>
-            {section.node.rawMarkdownBody}
-          </MuiMarkdown>
-        </div>
-      ))}
-    </div>
+    <MuiMarkdown className={classes.sectionBody}>
+      {text.node.rawMarkdownBody}
+    </MuiMarkdown>
   )
 }
 
-export default AboutTextColumn
+export default TextColumn
+
+TextColumn.propTypes = {
+  text: PropTypes.object,
+}

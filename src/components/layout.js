@@ -1,6 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
-//import { useStaticQuery, graphql } from "gatsby"
 import Footer from "./footer/Footer"
 import HeaderHero from "../components/headerHero/HeaderHero"
 import {
@@ -8,20 +6,11 @@ import {
   responsiveFontSizes,
   ThemeProvider,
 } from "@material-ui/core/styles"
+import PropTypes from "prop-types"
 
 let theme = createMuiTheme()
 theme = responsiveFontSizes(theme)
 const Layout = ({ children, full }) => {
-  /*const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)*/
-
   return (
     <>
       <ThemeProvider theme={theme}>

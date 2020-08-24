@@ -2,6 +2,7 @@ import React from "react"
 import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
 import Img from "gatsby-image"
+import PropTypes from "prop-types"
 
 const useStyles = makeStyles(theme => ({
   pictureDiv: {
@@ -13,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(2),
   },
 }))
-function AboutPicturesColumn({ images }) {
+function PicturesColumn({ images }) {
   const classes = useStyles()
   return (
     <div className={classes.pictureDiv}>
@@ -28,4 +29,8 @@ function AboutPicturesColumn({ images }) {
   )
 }
 
-export default AboutPicturesColumn
+export default PicturesColumn
+
+PicturesColumn.propTypes = {
+  images: PropTypes.array,
+}

@@ -1,15 +1,21 @@
 import React from "react"
-import CustomContainer from "../shared/CustomContainer"
-import ArticleCard from "../shared/ArticleCard"
 import { useStaticQuery, graphql } from "gatsby"
 import Grid from "@material-ui/core/Grid"
+import CustomContainer from "../shared/CustomContainer"
+import ArticleCard from "../shared/ArticleCard"
+import PropTypes from "prop-types"
 
 function MainLanding({ origin }) {
   const data = useStaticQuery(graphql`
     query PlaceholderImgQuery {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/article/" } }) {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/article/" } }
+        limit: 6
+        sort: { order: DESC, fields: frontmatter___date }
+      ) {
         edges {
           node {
+            html
             frontmatter {
               title
               overview
@@ -36,27 +42,31 @@ function MainLanding({ origin }) {
   return (
     <CustomContainer>
       <Grid container spacing={3}>
-        {articles.map((article, index) => (
-          <Grid
-            key={`article-${article.node.frontmatter.title}`}
-            item
-            xs={12}
-            sm={6}
-            md={4}
-          >
-            <ArticleCard
-              article={article.node.frontmatter}
-              img={
-                article.node.frontmatter.imgPlaceholder.childImageSharp.fluid
-              }
-              linkTo={article.node.fields.slug}
-              linkLocation={`${origin}${article.node.fields.slug}`}
-            />
-          </Grid>
-        ))}
+        {articles.map((article, index) => {
+          const { frontmatter, fields, html } = article.node
+          return (
+            <Grid
+              key={`article-${frontmatter.title}`}
+              item
+              xs={12}
+              sm={6}
+              md={4}
+            >
+              <ArticleCard
+                article={frontmatter}
+                img={frontmatter.imgPlaceholder.childImageSharp.fluid}
+                linkTo={fields.slug}
+                linkLocation={`${origin}${fields.slug}`}
+                html={html}
+              />
+            </Grid>
+          )
+        })}
       </Grid>
     </CustomContainer>
   )
 }
-
+MainLanding.propTypes = {
+  origin: PropTypes.string,
+}
 export default MainLanding

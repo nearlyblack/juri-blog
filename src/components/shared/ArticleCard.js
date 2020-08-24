@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
+import { Link } from "gatsby-theme-material-ui"
 import { makeStyles } from "@material-ui/core/styles"
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
@@ -8,7 +9,6 @@ import CardActions from "@material-ui/core/CardActions"
 import IconButton from "@material-ui/core/IconButton"
 import ShareIcon from "@material-ui/icons/Share"
 import Typography from "@material-ui/core/Typography"
-import { Link } from "gatsby-theme-material-ui"
 import SocialShareMenu from "./SocialShareMenu"
 
 const useStyles = makeStyles(theme => ({
@@ -30,9 +30,11 @@ const useStyles = makeStyles(theme => ({
   timeToRead: { padding: theme.spacing(0, 1) },
 }))
 
-function ArticleCard({ article, img, linkTo, linkLocation }) {
+function ArticleCard({ article, img, linkTo, linkLocation, html }) {
+  const { tags, title, overview } = article
   const classes = useStyles()
   const [anchorEl, setAnchorEl] = React.useState(null)
+
   const handleClick = event => {
     setAnchorEl(event.currentTarget)
   }
@@ -42,6 +44,11 @@ function ArticleCard({ article, img, linkTo, linkLocation }) {
   const handleKeyDown = e => {
     e.keyCode === 13 && handleClose()
   }
+  const getTimeToRead = text => {
+    let wordCount = text.replace(/[^\w ]/g, "").split(/\s+/).length
+    return Math.floor(wordCount / 228) + 1
+  }
+
   return (
     <Card className={classes.root}>
       <Link to={linkTo} underline="none">
@@ -49,13 +56,13 @@ function ArticleCard({ article, img, linkTo, linkLocation }) {
 
         <CardContent className={classes.content}>
           <Typography color="textPrimary" variant="subtitle2">
-            {article.tags && article.tags.join(", ")}
+            {tags && tags.join(", ")}
           </Typography>
           <Typography color="textPrimary" variant="h6" component="h6">
-            {article.title}
+            {title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {article.overview}
+            {overview}
           </Typography>
         </CardContent>
       </Link>
@@ -70,7 +77,7 @@ function ArticleCard({ article, img, linkTo, linkLocation }) {
           linkLocation={linkLocation}
         />
         <Typography className={classes.timeToRead} variant="body2">
-          {article.length}
+          {`${getTimeToRead(html)} min read`}
         </Typography>
       </CardActions>
     </Card>
@@ -80,5 +87,9 @@ function ArticleCard({ article, img, linkTo, linkLocation }) {
 export default ArticleCard
 
 ArticleCard.propTypes = {
-  articles: PropTypes.object,
+  article: PropTypes.object,
+  img: PropTypes.object,
+  linkTo: PropTypes.string,
+  linkLocation: PropTypes.string,
+  html: PropTypes.string,
 }

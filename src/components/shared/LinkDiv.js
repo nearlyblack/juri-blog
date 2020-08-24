@@ -1,8 +1,8 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { Link } from "gatsby-theme-material-ui"
-import PropTypes from "prop-types"
 import { useIntl } from "gatsby-plugin-react-intl"
+import PropTypes from "prop-types"
 
 const useStyles = makeStyles(theme => ({
   navLink: {
@@ -18,6 +18,7 @@ const useStyles = makeStyles(theme => ({
   },
   linkDiv: {},
 }))
+
 function LinkDiv({ small }) {
   const classes = useStyles()
   const intl = useIntl()
@@ -50,6 +51,6 @@ function LinkDiv({ small }) {
   )
 }
 LinkDiv.propTypes = {
-  size: PropTypes.bool,
+  small: PropTypes.bool,
 }
 export default LinkDiv

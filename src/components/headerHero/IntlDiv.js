@@ -1,8 +1,7 @@
 import React from "react"
-import Button from "@material-ui/core/Button"
-import { changeLocale } from "gatsby-plugin-react-intl"
+import { useIntl, changeLocale } from "gatsby-plugin-react-intl"
 import { makeStyles } from "@material-ui/core/styles"
-import { useIntl } from "gatsby-plugin-react-intl"
+import Button from "@material-ui/core/Button"
 
 const useStyles = makeStyles(theme => ({
   navBtn: {

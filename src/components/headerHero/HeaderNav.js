@@ -1,6 +1,5 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-//import Button from "@material-ui/core/Button"
 import LinkDiv from "../shared/LinkDiv"
 import IntlDiv from "./IntlDiv"
 const useStyles = makeStyles(theme => ({
@@ -9,8 +8,6 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "space-between",
     alignItems: "center",
   },
-  btnDiv: {},
-  headerBtn: { color: "#fff" },
 }))
 function HeaderNav() {
   const classes = useStyles()
@@ -19,9 +16,6 @@ function HeaderNav() {
     <div className={classes.nav}>
       <LinkDiv />
       <IntlDiv />
-      {/*<div className={classes.btnDiv}>
-        <Button className={classes.headerBtn}>Action</Button>
-  </div>*/}
     </div>
   )
 }

@@ -1,9 +1,9 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
+import Typography from "@material-ui/core/Typography"
 import LinkDiv from "../shared/LinkDiv"
 import CustomContainer from "../shared/CustomContainer"
 import grey from "@material-ui/core/colors/grey"
-import { Typography } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
   footer: {
@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function Footer({ siteMetadata }) {
+function Footer() {
   const classes = useStyles()
 
   return (

@@ -13,9 +13,8 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
   },
 }))
-function CustomContainer(props) {
+function CustomContainer({ children, className }) {
   const classes = useStyles()
-  const { children, className } = props
 
   return (
     <Container className={clsx(classes.container, className)}>

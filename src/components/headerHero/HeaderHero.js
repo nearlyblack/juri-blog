@@ -1,11 +1,11 @@
 import React from "react"
+import { makeStyles } from "@material-ui/core/styles"
 import HeaderHeroBgImg from "./HeaderHeroBgImg"
 import CustomContainer from "../shared/CustomContainer"
 import PropTypes from "prop-types"
 import HeaderMast from "./HeaderMast"
 import HeaderMain from "./HeaderMain"
 import HeaderNav from "./HeaderNav"
-import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles(theme => ({
   smallSizeContainer: {

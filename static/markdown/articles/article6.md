@@ -3,7 +3,6 @@ tags: ["Tech"]
 title: "Laboris minim"
 overview: "Eiusmod in tempor dolor laboris veniam quis veniam amet ad. Laboris irure excepteur et pariatur. Aliquip laborum aute aute nostrud laborum enim aute commodo. Enim mollit elit sunt exercitation duis."
 author: "Juri"
-length: "2 min read"
 slug: "article6"
 date: "13/4/2020"
 imgPlaceholder: ../../images/placeholders/placeholder6.jpg

@@ -3,7 +3,6 @@ tags: ["Tech", "Murata sucks"]
 title: "Sunt pariatur"
 overview: "Pariatur dolor in cupidatat aliquip fugiat minim qui ut est ad. Consectetur velit mollit pariatur magna laborum enim duis dolore reprehenderit non eiusmod. Anim est id sit fugiat in laboris duis quis. "
 author: "Juri"
-length: "1 min read"
 slug: "article7"
 date: "14/4/2020"
 imgPlaceholder: ../../images/placeholders/placeholder7.jpg

@@ -1,7 +1,7 @@
 import React from "react"
+import { useIntl } from "gatsby-plugin-react-intl"
 import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
-import { useIntl } from "gatsby-plugin-react-intl"
 
 const useStyles = makeStyles({
   main: {

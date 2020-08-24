@@ -1,8 +1,9 @@
 import React from "react"
+import { Link } from "gatsby-theme-material-ui"
 import ReactMarkdown from "markdown-to-jsx"
 import { withStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
-import { Link } from "gatsby-theme-material-ui"
+import PropTypes from "prop-types"
 
 const styles = theme => ({
   body1: {
@@ -53,6 +54,10 @@ const options = {
   },
 }
 
-export default function Markdown(props) {
+export default function MuiMarkdown(props) {
   return <ReactMarkdown options={options} {...props} />
+}
+
+MuiMarkdown.propTypes = {
+  children: PropTypes.string,
 }

@@ -3,7 +3,6 @@ tags: ["Lifestyle"]
 title: "Id ut magna laborum"
 overview: "In ut consectetur reprehenderit quis. Enim irure sint irure velit Lorem laborum. Reprehenderit labore occaecat ad aute mollit Lorem qui et."
 author: "Juri"
-length: "5 min read"
 slug: "article5"
 date: "13/3/2020"
 imgPlaceholder: ../../images/placeholders/placeholder5.jpg

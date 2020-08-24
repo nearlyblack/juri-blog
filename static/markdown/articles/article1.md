@@ -1,6 +1,6 @@
 ---
-tags: ["Tech"]
 title: "Veniam veniam magna"
+tags: ["Techs"]
 overview: "Labore ullamco non amet pariatur consectetur magna elit fugiat elit. Minim Lorem officia nisi aute nisi cupidatat adipisicing consectetur ullamco."
 author: "Juri"
 length: "2 min read"

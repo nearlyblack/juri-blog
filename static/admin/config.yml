@@ -2,40 +2,24 @@ backend:
   name: git-gateway
   branch: master
 
-<<<<<<< HEAD
-media_folder: static/img
-public_folder: /img
-=======
 media_folder: "static/images"
 public_folder: "/images"
->>>>>>> no-cms
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
+  - name: "articles"
+    label: "Articles"
+    folder: "static/markdown/articles"
     create: true
-<<<<<<< HEAD
-    slug: "index"
-    media_folder: ""
-    public_folder: ""
-=======
     slug: "{{year}}-{{month}}-{{day}}_{{title}}"
->>>>>>> no-cms
     path: "{{title}}/index"
     editor:
       preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
-<<<<<<< HEAD
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "string" }
-=======
       - { label: "Tags", name: "tags", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Overview", name: "overview", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Time to read", name: "length", widget: "string" }
       - { label: "Card Image", name: "imgPlaceholder", widget: "image" }
->>>>>>> no-cms
       - { label: "Body", name: "body", widget: "markdown" }

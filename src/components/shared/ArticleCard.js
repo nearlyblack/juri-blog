@@ -49,7 +49,7 @@ function ArticleCard({ article, img, linkTo, linkLocation }) {
 
         <CardContent className={classes.content}>
           <Typography color="textPrimary" variant="subtitle2">
-            {article.tags.join(", ")}
+            {article.tags}
           </Typography>
           <Typography color="textPrimary" variant="h6" component="h6">
             {article.title}

@@ -74,7 +74,6 @@ export const pageQuery = graphql`
             tags
             author
             length
-            title
             imgPlaceholder {
               childImageSharp {
                 fluid(quality: 60, maxWidth: 360) {

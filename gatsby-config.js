@@ -16,7 +16,6 @@ module.exports = {
 
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-react-intl`,
       options: {
@@ -61,13 +60,13 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/static/images`,
+        path: `${__dirname}/src/images`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/static/markdown`,
+        path: `${__dirname}/src/markdown`,
         name: `markdown`,
       },
     },
@@ -81,7 +80,7 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#fff`,
         display: `browser`,
-        icon: `static//images/icons/android-chrome-512x512.png`,
+        icon: `src/images/icons/android-chrome-512x512.png`,
       },
     },
     "gatsby-plugin-remove-serviceworker",

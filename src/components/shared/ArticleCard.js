@@ -45,8 +45,8 @@ function ArticleCard({ article, img, linkTo, linkLocation, html }) {
     e.keyCode === 13 && handleClose()
   }
   const getTimeToRead = text => {
-    let wordCount = text.replace(/[^\w ]/g, "").split(/\s+/).length
-    return Math.floor(wordCount / 228) + 1
+    let charCount = text.length
+    return Math.floor(charCount / 500) + 1
   }
 
   return (
